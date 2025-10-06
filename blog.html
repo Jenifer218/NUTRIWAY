@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - ProteinPal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        .article-card {
+            transition: all 0.3s ease;
+        }
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .read-more-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .read-more-content.expanded {
+            max-height: 1000px;
+        }
+    </style>
+</head>
+<!-- Navegación -->
+  <header class="bg-indigo-600 text-white p-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold">NutriWay</h1>
+     <nav class="space-x-4">
+      <a href="index.html" class="hover:underline">Menú</a>
+      <a href="encuesta.html" class="hover:underline">Encuestas</a>
+      <a href="recetas.html" class="hover:underline">Recetas</a>
+      <a href="consejos.html" class="hover:underline">Consejos</a>
+      <a href="blog.html" class="hover:underline">Blog</a>
+    </nav>
+  </header>
+<body class="bg-amber-50 min-h-screen">
+    <div class="container mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-amber-800 mb-4">Blog Nutricional</h1>
+            <p class="text-lg text-amber-700 max-w-2xl mx-auto">Artículos y guías sobre alimentación saludable, recetas y consejos para mejorar tu nutrición</p>
+        </div>
+
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 mb-12">
+            <div class="article-card bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqfbmntk6Bb868-C-h-07Sj-ZcB5UdxWMfPQ&s" alt="Proteínas vegetales" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i data-feather="calendar" class="mr-1 w-4 h-4"></i> 15 Mayo 2023
+                        <span class="mx-2">•</span>
+                        <i data-feather="user" class="mr-1 w-4 h-4"></i> Dra. María López
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Guía Completa de Proteínas Vegetales</h3>
+                    <p class="text-gray-600 mb-4">Descubre cómo obtener todos los aminoácidos esenciales sin consumir productos animales. Incluye combinaciones de alimentos y recetas fáciles...</p>
+                    <button class="read-more-btn text-amber-600 font-medium flex items-center">
+                        Leer más <i data-feather="chevron-down" class="ml-1 w-5 h-5"></i>
+                    </button>
+                    <div class="read-more-content mt-4">
+                        <p class="text-gray-600 mb-4">Las proteínas vegetales son una excelente alternativa para quienes buscan reducir el consumo de carne o seguir una dieta vegetariana/vegana. A diferencia de lo que muchos piensan, es posible obtener todos los aminoácidos esenciales combinando diferentes fuentes vegetales.</p>
+                        
+                        <h4 class="font-bold text-gray-800 mb-2">Combinaciones Clave:</h4>
+                        <ul class="list-disc pl-5 text-gray-600 mb-4">
+                            <li>Legumbres + cereales (lentejas con arroz)</li>
+                            <li>Legumbres + frutos secos (hummus con tahini)</li>
+                            <li>Quinoa (el único grano con proteína completa)</li>
+                        </ul>
+                        
+                        <h4 class="font-bold text-gray-800 mb-2">Fuentes Ricas:</h4>
+                        <ul class="list-disc pl-5 text-gray-600 mb-4">
+                            <li>Legumbres: garbanzos, lentejas, frijoles</li>
+                            <li>Tofu, tempeh y edamame</li>
+                            <li>Frutos secos y semillas</li>
+                            <li>Seitán (gluten de trigo)</li>
+                            <li>Levadura nutricional</li>
+                        </ul>
+                        
+                        <p class="text-gray-600">Para aumentar la absorción, remoja las legumbres antes de cocinarlas y combínalas con alimentos ricos en vitamina C.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-card bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="https://www.webconsultas.com/sites/default/files/styles/wc_adaptive_image__small/public/media/0d/migrated/hierro_g.jpg.webp" alt="Hierro en alimentos" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i data-feather="calendar" class="mr-1 w-4 h-4"></i> 2 Junio 2023
+                        <span class="mx-2">•</span>
+                        <i data-feather="user" class="mr-1 w-4 h-4"></i> Nut. Carlos Méndez
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Alimentos Ricos en Hierro y Cómo Potenciar su Absorción</h3>
+                    <p class="text-gray-600 mb-4">El hierro es esencial para la salud, pero no todo el hierro se absorbe igual. Aprende qué alimentos contienen más hierro y cómo combinarlos para maximizar su absorción...</p>
+                    <button class="read-more-btn text-amber-600 font-medium flex items-center">
+                        Leer más <i data-feather="chevron-down" class="ml-1 w-5 h-5"></i>
+                    </button>
+                    <div class="read-more-content mt-4">
+                        <h4 class="font-bold text-gray-800 mb-2">Tipos de Hierro:</h4>
+                        <ul class="list-disc pl-5 text-gray-600 mb-4">
+                            <li><strong>Hemo:</strong> De origen animal (carnes rojas, pescado, aves). Se absorbe mejor (15-35%)</li>
+                            <li><strong>No hemo:</strong> De origen vegetal (espinacas, legumbres, cereales fortificados). Absorción del 2-20%</li>
+                        </ul>
+                        
+                        <h4 class="font-bold text-gray-800 mb-2">Mejores Fuentes:</h4>
+                        <ul class="list-disc pl-5 text-gray-600 mb-4">
+                            <li>Carnes rojas magras</li>
+                            <li>Hígado (con moderación)</li>
+                            <li>Almejas y mejillones</li>
+                            <li>Lentejas y frijoles</li>
+                            <li>Espinacas y acelgas</li>
+                            <li>Semillas de calabaza</li>
+                            <li>Cereales fortificados</li>
+                        </ul>
+                        
+                        <h4 class="font-bold text-gray-800 mb-2">Potenciadores de Absorción:</h4>
+                        <ul class="list-disc pl-5 text-gray-600">
+                            <li>Vitamina C (cítricos, pimientos, brócoli)</li>
+                            <li>Carne, pescado y aves (aumentan absorción de hierro no hemo)</li>
+                            <li>Cocinar en ollas de hierro</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-card bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="https://media.scoolinary.app/blog/images/2021/09/grasas-saludables.jpg" alt="Grasas saludables" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i data-feather="calendar" class="mr-1 w-4 h-4"></i> 18 Junio 2023
+                        <span class="mx-2">•</span>
+                        <i data-feather="user" class="mr-1 w-4 h-4"></i> Dra. Ana Torres
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Grasas Saludables: Guía para Elegir las Correctas</h3>
+                    <p class="text-gray-600 mb-4">No todas las grasas son iguales. Descubre cuáles son beneficiosas para tu salud, cuáles debes consumir con moderación y cuáles evitar completamente...</p>
+                    <button class="read-more-btn text-amber-600 font-medium flex items-center">
+                        Leer más <i data-feather="chevron-down" class="ml-1 w-5 h-5"></i>
+                    </button>
+                    <div class="read-more-content mt-4">
+                        <h4 class="font-bold text-gray-800 mb-2">Grasas Beneficiosas:</h4>
+                        <ul class="list-disc pl-5 text-gray-600 mb-4">
+                            <li><strong>Monoinsaturadas:</strong> Aceite de oliva, aguacate, frutos secos</li>
+                            <li><strong>Omega-3:</strong> Pescado azul, semillas de chía, nueces</li>
+                            <li><strong>Omega-6 (en moderación):</strong> Aceites vegetales, semillas</li>
+                        </ul>
+                        
+                        <h4 class="font-bold text-gray-800 mb-2">Grasas a Moderar:</h4>
+                        <ul class="list-disc pl-5 text-gray-600 mb-4">
+                            <li><strong>Saturadas:</strong> Carnes rojas, lácteos enteros, aceite de coco</li>
+                            <li>Consumir en pequeñas cantidades, no más del 10% de calorías diarias</li>
+                        </ul>
+                        
+                        <h4 class="font-bold text-gray-800 mb-2">Grasas a Evitar:</h4>
+                        <ul class="list-disc pl-5 text-gray-600">
+                            <li><strong>Trans:</strong> Margarinas, alimentos procesados, fritos comerciales</li>
+                            <li>Aumentan colesterol malo (LDL) y reducen el bueno (HDL)</li>
+                            <li>Asociadas a mayor riesgo cardiovascular</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-card bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4UxINbK9F0j-Y6F_BZC8VdkJVwPI3QsO2Nw&s" alt="Meal prep" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i data-feather="calendar" class="mr-1 w-4 h-4"></i> 5 Julio 2023
+                        <span class="mx-2">•</span>
+                        <i data-feather="user" class="mr-1 w-4 h-4"></i> Chef. Javier Ruiz
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Meal Prep para Principiantes: Guía Paso a Paso</h3>
+                    <p class="text-gray-600 mb-4">Ahorra tiempo, dinero y come más saludable con esta guía completa de preparación de comidas para la semana. Incluye plan de menú y lista de compras...</p>
+                    <button class="read-more-btn text-amber-600 font-medium flex items-center">
+                        Leer más <i data-feather="chevron-down" class="ml-1 w-5 h-5"></i>
+                    </button>
+                    <div class="read-more-content mt-4">
+                        <h4 class="font-bold text-gray-800 mb-2">Beneficios:</h4>
+                        <ul class="list-disc pl-5 text-gray-600 mb-4">
+                            <li>Ahorro de tiempo durante la semana</li>
+                            <li>Control de porciones y nutrientes</li>
+                            <li>Menos tentación de comer fuera o alimentos poco saludables</li>
+                            <li>Reducción del desperdicio de alimentos</li>
+                        </ul>
+                        
+                        <h4 class="font-bold text-gray-800 mb-2">Pasos Básicos:</h4>
+                        <ol class="list-decimal pl-5 text-gray-600 mb-4">
+                            <li>Planifica tu menú semanal</li>
+                            <li>Haz una lista de compras organizada</li>
+                            <li>Dedica 2-3 horas el domingo a cocinar</li>
+                            <li>Usa recipientes herméticos para almacenar</li>
+                            <li>Etiqueta con fechas para mejor organización</li>
+                        </ol>
+                        
+                        <h4 class="font-bold text-gray-800 mb-2">Recetas Ideales:</h4>
+                        <ul class="list-disc pl-5 text-gray-600">
+                            <li>Granos cocidos (quinoa, arroz integral)</li>
+                            <li>Proteínas asadas o cocidas (pollo, tofu, legumbres)</li>
+                            <li>Vegetales al vapor o crudos lavados/cortados</li>
+                            <li>Salsas y aderezos por separado</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        feather.replace();
+        document.addEventListener('DOMContentLoaded', function() {
+            // Read more functionality
+            document.querySelectorAll('.read-more-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    if (content.classList.contains('expanded')) {
+                        content.classList.remove('expanded');
+                        icon.setAttribute('data-feather', 'chevron-down');
+                    } else {
+                        content.classList.add('expanded');
+                        icon.setAttribute('data-feather', 'chevron-up');
+                    }
+                    feather.replace();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

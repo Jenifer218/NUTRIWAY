@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta - NutriWay</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        .progress-bar {
+            height: 6px;
+            transition: width 0.3s ease;
+        }
+        .option-card {
+            transition: all 0.3s ease;
+        }
+        .option-card:hover {
+            transform: translateY(-5px);
+        }
+        .option-card.selected {
+            border-color: #d97706;
+            box-shadow: 0 10px 15px -3px rgba(217, 119, 6, 0.1);
+        }
+    </style>
+</head>
+<!-- Navegación -->
+  <header class="bg-indigo-600 text-white p-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold">NutriWay</h1>
+     <nav class="space-x-4">
+      <a href="index.html" class="hover:underline">Menú</a>
+      <a href="encuesta.html" class="hover:underline">Encuestas</a>
+      <a href="recetas.html" class="hover:underline">Recetas</a>
+      <a href="consejos.html" class="hover:underline">Consejos</a>
+      <a href="blog.html" class="hover:underline">Blog</a>
+    </nav>
+  </header>
+<body class="bg-amber-50 min-h-screen">
+    <div class="container mx-auto px-4 py-12">
+        <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div class="px-8 py-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold text-amber-800">Encuesta Nutricional</h2>
+                    <span class="text-sm text-amber-600">Paso <span id="current-step">1</span> de 5</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2 mb-8">
+                    <div id="progress" class="progress-bar bg-amber-600 rounded-full" style="width: 20%"></div>
+                </div>
+                
+                <div id="question-container">
+                    <div class="question active" data-step="1">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-6">¿Qué tipo de proteínas prefieres?</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="option-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer" data-answer="animal">
+                                <div class="flex items-center">
+                                    <i data-feather="drumstick" class="text-amber-600 mr-3"></i>
+                                    <span class="font-medium">Animales (carne, pollo, pescado)</span>
+                                </div>
+                            </div>
+                            <div class="option-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer" data-answer="vegetal">
+                                <div class="flex items-center">
+                                    <i data-feather="leaf" class="text-amber-600 mr-3"></i>
+                                    <span class="font-medium">Vegetales (legumbres, tofu)</span>
+                                </div>
+                            </div>
+                            <div class="option-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer" data-answer="ambos">
+                                <div class="flex items-center">
+                                    <i data-feather="layers" class="text-amber-600 mr-3"></i>
+                                    <span class="font-medium">Ambos tipos</span>
+                                </div>
+                            </div>
+                            <div class="option-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer" data-answer="indiferente">
+                                <div class="flex items-center">
+                                    <i data-feather="help-circle" class="text-amber-600 mr-3"></i>
+                                    <span class="font-medium">Indiferente</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question hidden" data-step="2">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-6">¿Qué nivel de hierro necesitas?</h3>
+                        <div class="grid gap-4">
+                            <div class="option-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer" data-answer="alto">
+                                <div class="flex items-center">
+                                    <i data-feather="battery-charging" class="text-amber-600 mr-3"></i>
+                                    <span class="font-medium">Alto (tengo deficiencia de hierro)</span>
+                                </div>
+                            </div>
+                            <div class="option-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer" data-answer="moderado">
+                                <div class="flex items-center">
+                                    <i data-feather="battery" class="text-amber-600 mr-3"></i>
+                                    <span class="font-medium">Moderado (mantener niveles)</span>
+                                </div>
+                            </div>
+                            <div class="option-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer" data-answer="bajo">
+                                <div class="flex items-center">
+                                    <i data-feather="activity" class="text-amber-600 mr-3"></i>
+                                    <span class="font-medium">Bajo (solo como complemento)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question hidden" data-step="3">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-6">¿Qué tipo de lípidos prefieres?</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="option-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer" data-answer="saludables">
+                                <div class="flex items-center">
+                                    <i data-feather="droplet" class="text-amber-600 mr-3"></i>
+                                    <span class="font-medium">Grasas saludables (aguacate, frutos secos)</span>
+                                </div>
+                            </div>
+                            <div class="option-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer" data-answer="animales">
+                                <div class="flex items-center">
+                                    <i data-feather="meat" class="text-amber-600 mr-3"></i>
+                                    <span class="font-medium">Grasas animales (mantequilla, lácteos)</span>
+                                </div>
+                            </div>
+                            <div class="option-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer" data-answer="minimos">
+                                <div class="flex items-center">
+                                    <i data-feather="minimize-2" class="text-amber-600 mr-3"></i>
+                                    <span class="font-medium">Mínimos (bajo contenido graso)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question hidden" data-step="4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-6">¿Tienes alguna restricción alimentaria?</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="option-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer" data-answer="ninguna">
+                                <div class="flex items-center">
+                                    <i data-feather="check-circle" class="text-amber-600 mr-3"></i>
+                                    <span class="font-medium">Ninguna</span>
+                                </div>
+                            </div>
+                            <div class="option-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer" data-answer="vegetariano">
+                                <div class="flex items-center">
+                                    <i data-feather="feather" class="text-amber-600 mr-3"></i>
+                                    <span class="font-medium">Vegetariano</span>
+                                </div>
+                            </div>
+                            <div class="option-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer" data-answer="vegano">
+                                <div class="flex items-center">
+                                    <i data-feather="seedling" class="text-amber-600 mr-3"></i>
+                                    <span class="font-medium">Vegano</span>
+                                </div>
+                            </div>
+                            <div class="option-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer" data-answer="intolerancias">
+                                <div class="flex items-center">
+                                    <i data-feather="alert-circle" class="text-amber-600 mr-3"></i>
+                                    <span class="font-medium">Intolerancias</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question hidden" data-step="5">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-6">¿Qué tipo de comida prefieres?</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="option-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer" data-answer="rapida">
+                                <div class="flex items-center">
+                                    <i data-feather="clock" class="text-amber-600 mr-3"></i>
+                                    <span class="font-medium">Rápida y sencilla</span>
+                                </div>
+                            </div>
+                            <div class="option-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer" data-answer="elaborada">
+                                <div class="flex items-center">
+                                    <i data-feather="coffee" class="text-amber-600 mr-3"></i>
+                                    <span class="font-medium">Elaborada (para ocasiones)</span>
+                                </div>
+                            </div>
+                            <div class="option-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer" data-answer="intermedia">
+                                <div class="flex items-center">
+                                    <i data-feather="home" class="text-amber-600 mr-3"></i>
+                                    <span class="font-medium">Cocina casera tradicional</span>
+                                </div>
+                            </div>
+                            <div class="option-card border-2 border-gray-200 rounded-xl p-4 cursor-pointer" data-answer="exotica">
+                                <div class="flex items-center">
+                                    <i data-feather="globe" class="text-amber-600 mr-3"></i>
+                                    <span class="font-medium">Comida exótica/internacional</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-between mt-8">
+                    <button id="prev-btn" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium py-2 px-6 rounded-full transition duration-300 opacity-0 invisible">
+                        Anterior
+                    </button>
+                    <button id="next-btn" class="bg-amber-600 hover:bg-amber-700 text-white font-medium py-2 px-6 rounded-full transition duration-300">
+                        Siguiente
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        feather.replace();
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.question');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const currentStepEl = document.getElementById('current-step');
+            const progressBar = document.getElementById('progress');
+            let currentStep = 1;
+            const answers = {};
+            
+            // Initialize
+            updateNavigation();
+            
+            // Option selection
+            document.querySelectorAll('.option-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const questionNumber = this.closest('.question').dataset.step;
+                    const answerValue = this.dataset.answer;
+                    
+                    // Remove selection from other options in same question
+                    this.closest('.question').querySelectorAll('.option-card').forEach(opt => {
+                        opt.classList.remove('selected', 'border-amber-500');
+                    });
+                    
+                    // Select this option
+                    this.classList.add('selected', 'border-amber-500');
+                    answers[`question${questionNumber}`] = answerValue;
+                });
+            });
+            
+            // Next button
+            nextBtn.addEventListener('click', function() {
+                if (!answers[`question${currentStep}`]) {
+                    alert('Por favor selecciona una opción antes de continuar');
+                    return;
+                }
+                
+                if (currentStep < questions.length) {
+                    document.querySelector(`.question[data-step="${currentStep}"]`).classList.remove('active');
+                    document.querySelector(`.question[data-step="${currentStep}"]`).classList.add('hidden');
+                    
+                    currentStep++;
+                    document.querySelector(`.question[data-step="${currentStep}"]`).classList.remove('hidden');
+                    document.querySelector(`.question[data-step="${currentStep}"]`).classList.add('active');
+                    
+                    if (currentStep === questions.length) {
+                        nextBtn.textContent = 'Ver Recomendación';
+                    }
+                    
+                    updateNavigation();
+                } else {
+                    // Submit survey and show recommendation
+                    showRecommendation(answers);
+                }
+            });
+            
+            // Previous button
+            prevBtn.addEventListener('click', function() {
+                document.querySelector(`.question[data-step="${currentStep}"]`).classList.remove('active');
+                document.querySelector(`.question[data-step="${currentStep}"]`).classList.add('hidden');
+                
+                currentStep--;
+                document.querySelector(`.question[data-step="${currentStep}"]`).classList.remove('hidden');
+                document.querySelector(`.question[data-step="${currentStep}"]`).classList.add('active');
+                
+                if (currentStep < questions.length) {
+                    nextBtn.textContent = 'Siguiente';
+                }
+                
+                updateNavigation();
+            });
+            
+            function updateNavigation() {
+                currentStepEl.textContent = currentStep;
+                progressBar.style.width = `${(currentStep / questions.length) * 100}%`;
+                
+                if (currentStep > 1) {
+                    prevBtn.classList.remove('opacity-0', 'invisible');
+                } else {
+                    prevBtn.classList.add('opacity-0', 'invisible');
+                }
+            }
+            
+            function showRecommendation(answers) {
+                // This would be replaced with actual logic to determine recommendation
+                // For now, we'll simulate with a random recommendation
+                const recommendations = [
+                    {
+                        description: "Rico en proteína vegetal, hierro de las espinacas y grasas saludables del aceite de oliva.",
+                        image: "https://solnatural.bio/views/img/recipesphotos/453.jpg",
+                        nutrients: "Proteína: 22g | Hierro: 4.5mg | Grasas: 12g",
+                        time: "25 min",
+                        difficulty: "Fácil"
+                    },
+                    {
+                        name: "Filete de Salmón con Brócoli y Puré de Camote",
+                        description: "Alto en omega-3, proteína animal y hierro del salmón, con carbohidratos complejos.",
+                        image: "https://storage.googleapis.com/avena-recipes-v2/2019/10/1571779558774.jpeg",
+                        nutrients: "Proteína: 30g | Hierro: 2.8mg | Grasas: 18g",
+                        time: "35 min",
+                        difficulty: "Intermedia"
+                    },
+                    {
+                        name: "Ensalada de Lentejas con Aguacate y Huevo",
+                        description: "Combinación perfecta de proteína vegetal y animal, hierro de las lentejas y grasas saludables.",
+                        image: "https://cdn0.uncomo.com/es/posts/9/9/1/como_hacer_una_ensalada_de_lentejas_con_aguacate_52199_orig.jpg",
+                        nutrients: "Proteína: 25g | Hierro: 6.2mg | Grasas: 15g",
+                        time: "15 min",
+                        difficulty: "Fácil"
+                    }
+                ];
+                
+                const recommendedMeal = recommendations[Math.floor(Math.random() * recommendations.length)];
+                
+                // Create recommendation HTML
+                const resultHTML = `
+                    <div class="text-center py-8">
+                        <h3 class="text-2xl font-bold text-amber-800 mb-4">¡Tu plato perfecto!</h3>
+                        <div class="bg-white rounded-xl shadow-md overflow-hidden max-w-md mx-auto mb-6">
+                            <img src="${recommendedMeal.image}" alt="${recommendedMeal.name}" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold text-gray-800 mb-2">${recommendedMeal.name}</h4>
+                                <p class="text-gray-600 mb-4">${recommendedMeal.description}</p>
+                                <div class="flex justify-between text-sm text-gray-500 mb-4">
+                                    <span><i data-feather="clock" class="inline mr-1 w-4 h-4"></i> ${recommendedMeal.time}</span>
+                                    <span><i data-feather="activity" class="inline mr-1 w-4 h-4"></i> ${recommendedMeal.difficulty}</span>
+                                </div>
+                                <div class="bg-amber-50 rounded-lg p-3 text-amber-800 font-medium">
+                                    ${recommendedMeal.nutrients}
+                                </div>
+                            </div>
+                        </div>
+                        <a href="recetas.html" class="inline-block bg-amber-600 hover:bg-amber-700 text-white font-medium py-2 px-6 rounded-full transition duration-300 mt-4">
+                            Ver más recetas similares
+                        </a>
+                    </div>
+                `;
+                
+                // Replace question container with result
+                document.getElementById('question-container').innerHTML = resultHTML;
+                document.getElementById('next-btn').classList.add('hidden');
+                document.getElementById('prev-btn').classList.add('hidden');
+                feather.replace();
+            }
+        });
+    </script>
+</body>
+</html>

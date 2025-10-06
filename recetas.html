@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas - ProteinPal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        .recipe-card {
+            transition: all 0.3s ease;
+        }
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .read-more-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .read-more-content.expanded {
+            max-height: 1000px;
+        }
+    </style>
+</head>
+<!-- Navegación -->
+  <header class="bg-indigo-600 text-white p-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold">NutriWay</h1>
+     <nav class="space-x-4">
+      <a href="index.html" class="hover:underline">Menú</a>
+      <a href="encuesta.html" class="hover:underline">Encuestas</a>
+      <a href="recetas.html" class="hover:underline">Recetas</a>
+      <a href="consejos.html" class="hover:underline">Consejos</a>
+      <a href="blog.html" class="hover:underline">Blog</a>
+    </nav>
+  </header>
+<body class="bg-amber-50 min-h-screen">
+    <div class="container mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-amber-800 mb-4">Recetas Saludables</h1>
+            <p class="text-lg text-amber-700 max-w-2xl mx-auto">Descubre deliciosas opciones ricas en proteínas, hierro y grasas saludables para mantener una dieta balanceada</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Recipe 1 -->
+            <div class="recipe-card bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVYrCuMehWc-ksNpzyUS9zUzv6e1_kjy7H-Q&s" alt="Bowl de Quinoa" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-gray-800">Bowl de Quinoa con Garbanzos</h3>
+                        <span class="bg-amber-100 text-amber-800 text-xs font-medium px-2.5 py-0.5 rounded">Vegetariano</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i data-feather="clock" class="mr-1 w-4 h-4"></i> 20 min
+                        <span class="mx-2">•</span>
+                        <i data-feather="activity" class="mr-1 w-4 h-4"></i> Fácil
+                    </div>
+                    <p class="text-gray-600 mb-4">Un bowl lleno de proteína vegetal, hierro y fibra. Perfecto para una comida rápida y nutritiva.</p>
+                    <div class="bg-amber-50 rounded-lg p-3 text-amber-800 font-medium text-sm mb-4">
+                        Proteína: 18g | Hierro: 5.2mg | Grasas: 10g
+                    </div>
+                    <button class="read-more-btn text-amber-600 font-medium flex items-center">
+                        Leer más <i data-feather="chevron-down" class="ml-1 w-5 h-5"></i>
+                    </button>
+                    <div class="read-more-content mt-4">
+                        <h4 class="font-bold text-gray-800 mb-2">Ingredientes:</h4>
+                        <ul class="list-disc pl-5 text-gray-600 mb-4">
+                            <li>1 taza de quinoa cocida</li>
+                            <li>1/2 taza de garbanzos cocidos</li>
+                            <li>1 aguacate en cubos</li>
+                            <li>1/2 taza de tomate cherry</li>
+                            <li>Hojas de espinaca</li>
+                            <li>1 cucharada de aceite de oliva</li>
+                            <li>Jugo de limón al gusto</li>
+                            <li>Sal y pimienta</li>
+                        </ul>
+                        <h4 class="font-bold text-gray-800 mb-2">Preparación:</h4>
+                        <ol class="list-decimal pl-5 text-gray-600">
+                            <li>Cocina la quinoa según las instrucciones del paquete.</li>
+                            <li>En un bowl, mezcla la quinoa con los garbanzos.</li>
+                            <li>Añade el aguacate, tomate y espinacas.</li>
+                            <li>Aliña con aceite de oliva, jugo de limón, sal y pimienta.</li>
+                            <li>¡Sirve y disfruta!</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 2 -->
+            <div class="recipe-card bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTICyYULF9BgcC8XjTVbnNbiocuPCd37KZ8aw&s" alt="Salmón al horno" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-gray-800">Salmón al Horno con Espárragos</h3>
+                        <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Alto en Omega-3</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i data-feather="clock" class="mr-1 w-4 h-4"></i> 30 min
+                        <span class="mx-2">•</span>
+                        <i data-feather="activity" class="mr-1 w-4 h-4"></i> Intermedia
+                    </div>
+                    <p class="text-gray-600 mb-4">Rico en proteínas y ácidos grasos omega-3, ideal para cuidar tu corazón y músculos.</p>
+                    <div class="bg-amber-50 rounded-lg p-3 text-amber-800 font-medium text-sm mb-4">
+                        Proteína: 28g | Hierro: 3.1mg | Grasas: 15g
+                    </div>
+                    <button class="read-more-btn text-amber-600 font-medium flex items-center">
+                        Leer más <i data-feather="chevron-down" class="ml-1 w-5 h-5"></i>
+                    </button>
+                    <div class="read-more-content mt-4">
+                        <h4 class="font-bold text-gray-800 mb-2">Ingredientes:</h4>
+                        <ul class="list-disc pl-5 text-gray-600 mb-4">
+                            <li>2 filetes de salmón (200g cada uno)</li>
+                            <li>1 manojo de espárragos verdes</li>
+                            <li>2 cucharadas de aceite de oliva</li>
+                            <li>1 limón</li>
+                            <li>1 diente de ajo picado</li>
+                            <li>Sal y pimienta al gusto</li>
+                            <li>Eneldo fresco (opcional)</li>
+                        </ul>
+                        <h4 class="font-bold text-gray-800 mb-2">Preparación:</h4>
+                        <ol class="list-decimal pl-5 text-gray-600">
+                            <li>Precalienta el horno a 200°C.</li>
+                            <li>Lava y corta los espárragos, eliminando los extremos duros.</li>
+                            <li>Coloca el salmón y los espárragos en una bandeja para horno.</li>
+                            <li>Rocía con aceite de oliva, ajo picado, sal y pimienta.</li>
+                            <li>Hornea por 15-20 minutos hasta que el salmón esté cocido.</li>
+                            <li>Sirve con gajos de limón y eneldo fresco.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 3 -->
+            <div class="recipe-card bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="https://cdn0.recetasgratis.net/es/posts/2/1/3/hamburguesas_de_lentejas_y_avena_75312_orig.jpg" alt="Hamburguesa de lentejas" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-gray-800">Hamburguesa de Lentejas y Avena</h3>
+                        <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Vegano</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i data-feather="clock" class="mr-1 w-4 h-4"></i> 40 min
+                        <span class="mx-2">•</span>
+                        <i data-feather="activity" class="mr-1 w-4 h-4"></i> Intermedia
+                    </div>
+                    <p class="text-gray-600 mb-4">Alternativa vegana rica en proteína vegetal, hierro y fibra. Perfecta para preparar en batch.</p>
+                    <div class="bg-amber-50 rounded-lg p-3 text-amber-800 font-medium text-sm mb-4">
+                        Proteína: 15g | Hierro: 4.8mg | Grasas: 8g
+                    </div>
+                    <button class="read-more-btn text-amber-600 font-medium flex items-center">
+                        Leer más <i data-feather="chevron-down" class="ml-1 w-5 h-5"></i>
+                    </button>
+                    <div class="read-more-content mt-4">
+                        <h4 class="font-bold text-gray-800 mb-2">Ingredientes:</h4>
+                        <ul class="list-disc pl-5 text-gray-600 mb-4">
+                            <li>1 taza de lentejas cocidas</li>
+                            <li>1/2 taza de avena molida</li>
+                            <li>1/2 cebolla picada</li>
+                            <li>1 zanahoria rallada</li>
+                            <li>1 diente de ajo picado</li>
+                            <li>1 cucharada de perejil fresco</li>
+                            <li>1 cucharadita de comino</li>
+                            <li>Sal y pimienta al gusto</li>
+                            <li>Aceite de oliva para freír</li>
+                        </ul>
+                        <h4 class="font-bold text-gray-800 mb-2">Preparación:</h4>
+                        <ol class="list-decimal pl-5 text-gray-600">
+                            <li>En un procesador de alimentos, tritura las lentejas hasta obtener una pasta.</li>
+                            <li>Mezcla con la avena, cebolla, zanahoria, ajo y especias.</li>
+                            <li>Forma hamburguesas y refrigera por 30 minutos para que mantengan la forma.</li>
+                            <li>Calienta un poco de aceite en una sartén y cocina las hamburguesas a fuego medio por 4-5 minutos por cada lado.</li>
+                            <li>Sirve en pan integral con tus toppings favoritos.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 4 -->
+            <div class="recipe-card bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB4tb-6AGLTV4Mu3KwYFIW9J8I3h8Y5utq4g&s" alt="Omelette de espinacas" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-gray-800">Omelette de Espinacas y Champiñones</h3>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Keto</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i data-feather="clock" class="mr-1 w-4 h-4"></i> 15 min
+                        <span class="mx-2">•</span>
+                        <i data-feather="activity" class="mr-1 w-4 h-4"></i> Fácil
+                    </div>
+                    <p class="text-gray-600 mb-4">Desayuno rico en proteínas y hierro, bajo en carbohidratos. Perfecto para empezar el día con energía.</p>
+                    <div class="bg-amber-50 rounded-lg p-3 text-amber-800 font-medium text-sm mb-4">
+                        Proteína: 20g | Hierro: 3.5mg | Grasas: 12g
+                    </div>
+                    <button class="read-more-btn text-amber-600 font-medium flex items-center">
+                        Leer más <i data-feather="chevron-down" class="ml-1 w-5 h-5"></i>
+                    </button>
+                    <div class="read-more-content mt-4">
+                        <h4 class="font-bold text-gray-800 mb-2">Ingredientes:</h4>
+                        <ul class="list-disc pl-5 text-gray-600 mb-4">
+                            <li>3 huevos</li>
+                            <li>1 puñado de espinacas frescas</li>
+                            <li>5-6 champiñones en rebanadas</li>
+                            <li>1/4 de cebolla picada</li>
+                            <li>1 cucharada de aceite de oliva</li>
+                            <li>Sal y pimienta al gusto</li>
+                            <li>Queso feta o de cabra (opcional)</li>
+                        </ul>
+                        <h4 class="font-bold text-gray-800 mb-2">Preparación:</h4>
+                        <ol class="list-decimal pl-5 text-gray-600">
+                            <li>Bate los huevos con sal y pimienta.</li>
+                            <li>En una sartén antiadherente, calienta el aceite y saltea la cebolla y champiñones por 2-3 minutos.</li>
+                            <li>Añade las espinacas y cocina hasta que se ablanden.</li>
+                            <li>Vierte los huevos batidos sobre las verduras.</li>
+                            <li>Cocina a fuego medio-bajo hasta que los huevos estén cuajados.</li>
+                            <li>Si deseas, añade queso antes de doblar el omelette por la mitad.</li>
+                            <li>¡Sirve caliente!</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 5 -->
+            <div class="recipe-card bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuxtKUxg4v4uUy8mKOpsbvaDkhlz8as85w2A&s" alt="Pollo al curry" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-gray-800">Pollo al Curry con Leche de Coco</h3>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">Alto en Proteína</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i data-feather="clock" class="mr-1 w-4 h-4"></i> 45 min
+                        <span class="mx-2">•</span>
+                        <i data-feather="activity" class="mr-1 w-4 h-4"></i> Intermedia
+                    </div>
+                    <p class="text-gray-600 mb-4">Plato lleno de sabor con proteína magra y grasas saludables de la leche de coco. Rico en hierro.</p>
+                    <div class="bg-amber-50 rounded-lg p-3 text-amber-800 font-medium text-sm mb-4">
+                        Proteína: 32g | Hierro: 3.8mg | Grasas: 18g
+                    </div>
+                    <button class="read-more-btn text-amber-600 font-medium flex items-center">
+                        Leer más <i data-feather="chevron-down" class="ml-1 w-5 h-5"></i>
+                    </button>
+                    <div class="read-more-content mt-4">
+                        <h4 class="font-bold text-gray-800 mb-2">Ingredientes:</h4>
+                        <ul class="list-disc pl-5 text-gray-600 mb-4">
+                            <li>500g de pechuga de pollo en cubos</li>
+                            <li>1 cebolla picada</li>
+                            <li>2 dientes de ajo picados</li>
+                            <li>1 pimiento rojo en tiras</li>
+                            <li>1 lata de leche de coco</li>
+                            <li>2 cucharadas de pasta de curry</li>
+                            <li>1 cucharadita de jengibre rallado</li>
+                            <li>1 cucharada de aceite de coco</li>
+                            <li>Sal al gusto</li>
+                            <li>Cilantro fresco para decorar</li>
+                        </ul>
+                        <h4 class="font-bold text-gray-800 mb-2">Preparación:</h4>
+                        <ol class="list-decimal pl-5 text-gray-600">
+                            <li>En una olla grande, calienta el aceite de coco y saltea la cebolla y ajo hasta que estén transparentes.</li>
+                            <li>Añade el pollo y cocina hasta que se dore por todos lados.</li>
+                            <li>Agrega el pimiento, jengibre y pasta de curry. Cocina por 2 minutos.</li>
+                            <li>Vierte la leche de coco y mezcla bien.</li>
+                            <li>Cocina a fuego medio-bajo por 20-25 minutos hasta que el pollo esté tierno.</li>
+                            <li>Ajusta la sal si es necesario.</li>
+                            <li>Sirve con arroz integral y decora con cilantro fresco.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 6 -->
+            <div class="recipe-card bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="https://cdn6.recetasdeescandalo.com/wp-content/uploads/2019/06/Ensalada-de-garbanzos-con-atun-y-pimiento-rojo.jpg" alt="Ensalada de garbanzos" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-gray-800">Ensalada de Garbanzos y Atún</h3>
+                        <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Alto en Hierro</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-3">
+                        <i data-feather="clock" class="mr-1 w-4 h-4"></i> 10 min
+                        <span class="mx-2">•</span>
+                        <i data-feather="activity" class="mr-1 w-4 h-4"></i> Fácil
+                    </div>
+                    <p class="text-gray-600 mb-4">Combinación perfecta de proteína animal y vegetal, con un alto contenido de hierro. Ideal para llevar.</p>
+                    <div class="bg-amber-50 rounded-lg p-3 text-amber-800 font-medium text-sm mb-4">
+                        Proteína: 26g | Hierro: 5.5mg | Grasas: 9g
+                    </div>
+                    <button class="read-more-btn text-amber-600 font-medium flex items-center">
+                        Leer más <i data-feather="chevron-down" class="ml-1 w-5 h-5"></i>
+                    </button>
+                    <div class="read-more-content mt-4">
+                        <h4 class="font-bold text-gray-800 mb-2">Ingredientes:</h4>
+                        <ul class="list-disc pl-5 text-gray-600 mb-4">
+                            <li>1 lata de garbanzos escurridos</li>
+                            <li>1 lata de atún al natural escurrido</li>
+                            <li>1/2 pimiento rojo picado</li>
+                            <li>1/4 de cebolla morada picada</li>
+                            <li>1/2 pepino en cubos</li>
+                            <li>1 cucharada de perejil fresco</li>
+                            <li>1 cucharada de aceite de oliva</li>
+                            <li>Jugo de 1/2 limón</li>
+                            <li>Sal y pimienta al gusto</li>
+                        </ul>
+                        <h4 class="font-bold text-gray-800 mb-2">Preparación:</h4>
+                        <ol class="list-decimal pl-5 text-gray-600">
+                            <li>En un tazón grande, mezcla los garbanzos con el atún desmenuzado.</li>
+                            <li>Añade el pimiento, cebolla, pepino y perejil.</li>
+                            <li>Aliña con aceite de oliva, jugo de limón, sal y pimienta.</li>
+                            <li>Mezcla bien todos los ingredientes.</li>
+                            <li>Puedes servir inmediatamente o refrigerar por 1 hora para que los sabores se mezclen mejor.</li>
+                            <li>Opción: servir sobre lechuga o espinacas frescas.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        feather.replace();
+        document.addEventListener('DOMContentLoaded', function() {
+            // Read more functionality
+            document.querySelectorAll('.read-more-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    if (content.classList.contains('expanded')) {
+                        content.classList.remove('expanded');
+                        icon.setAttribute('data-feather', 'chevron-down');
+                    } else {
+                        content.classList.add('expanded');
+                        icon.setAttribute('data-feather', 'chevron-up');
+                    }
+                    feather.replace();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

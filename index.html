@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProteinPal - Find Your Perfect Meal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .qr-code {
+            transition: all 0.3s ease;
+        }
+        .qr-code:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<!-- Navegación -->
+  <header class="bg-indigo-600 text-white p-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold">NutriWay</h1>
+    <nav class="space-x-4">
+      <a href="index.html" class="hover:underline">Menú</a>
+      <a href="encuesta.html" class="hover:underline">Encuestas</a>
+      <a href="recetas.html" class="hover:underline">Recetas</a>
+      <a href="consejos.html" class="hover:underline">Consejos</a>
+      <a href="blog.html" class="hover:underline">Blog</a>
+    </nav>
+  </header>
+<body class="bg-gradient-to-br from-amber-50 to-amber-100 min-h-screen">
+    <div class="container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-5xl font-bold text-amber-800 mb-6">NutriWay</h1>
+            <p class="text-xl text-amber-700 mb-10">Descubre tu plato perfecto rico en proteínas, hierro y lípidos</p>
+            
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-10">
+                <div class="flex flex-col items-center justify-center">
+                    <div class="qr-code bg-white p-4 rounded-xl shadow-lg mb-6 cursor-pointer">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://proteinpal.com/encuesta" alt="Escanea para comenzar" class="w-48 h-48">
+                    </div>
+                    <p class="text-amber-600 mb-6">Escanea el código QR o haz clic abajo para comenzar</p>
+                    <a href="encuesta.html" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg">
+                        Comenzar Encuesta
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <a href="recetas.html" class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <div class="text-amber-600 mb-4">
+                        <i data-feather="book-open" class="w-12 h-12 mx-auto"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-amber-800 mb-2">Recetas Saludables</h3>
+                    <p class="text-gray-600">Descubre deliciosas opciones ricas en nutrientes</p>
+                </a>
+                
+                <a href="consejos.html" class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <div class="text-amber-600 mb-4">
+                        <i data-feather="heart" class="w-12 h-12 mx-auto"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-amber-800 mb-2">Consejos Nutricionales</h3>
+                    <p class="text-gray-600">Aprende a comer mejor y más saludable</p>
+                </a>
+                
+                <a href="blog.html" class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <div class="text-amber-600 mb-4">
+                        <i data-feather="edit-3" class="w-12 h-12 mx-auto"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-amber-800 mb-2">Blog Nutricional</h3>
+                    <p class="text-gray-600">Artículos sobre alimentación saludable</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        feather.replace();
+        document.querySelector('.qr-code').addEventListener('click', function() {
+            window.location.href = 'encuesta.html';
+        });
+    </script>
+</body>
+</html>
